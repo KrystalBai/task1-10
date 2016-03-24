@@ -54,6 +54,35 @@ a{
 .container{
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-between;
     border: 1px solid #999;
+    align-items: center;
+    padding:20px;
+}
+[class*='item']{
+    width: 150px;
+    border: 1px solid #f00;
+}
+.item1{
+    height:120px;
+}
+.item2{
+    height:100px;
+}
+.item3{
+    height:40px;
+}
+.item4{
+    height:200px;
+    border: 1px solid #283efb;
 }
 
+@media screen and (max-width:640px){
+    .container{
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+    .item4{
+        order: -1;
+    }
+}
