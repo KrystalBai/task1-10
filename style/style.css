@@ -1,64 +1,21 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-u, i, center,
-dl, dt, dd, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'Lucida Grande', 'Luxi Sans', Arial, sans-serif;
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-a{
-    text-decoration: none;
-}
-
 .container{
-    display: flex;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
     flex-flow: row wrap;
     justify-content: space-between;
     border: 1px solid #999;
     align-items: center;
     padding:20px;
 }
+
 [class*='item']{
     width: 150px;
     border: 1px solid #f00;
@@ -74,15 +31,33 @@ a{
 }
 .item4{
     height:200px;
-    border: 1px solid #283efb;
+    border-color: #283efb;
 }
-
-@media screen and (max-width:640px){
+@media screen and (max-width:641px){
     .container{
         align-items: flex-start;
         justify-content: space-around;
     }
     .item4{
         order: -1;
+    }
+}
+@media screen and (max-width:641px) and (min-width: 492px){
+    .container:after {
+        content: "";
+        width:calc(23% + 196px);
+    }
+    .item3{
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width:491px) and (min-width: 342px){
+    .item2,.item3{
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width:341px) {
+    .item1, .item2, .item3{
+        margin-top: 20px;
     }
 }
